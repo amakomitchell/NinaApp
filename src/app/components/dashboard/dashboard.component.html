@@ -1,0 +1,203 @@
+<br><br>
+<div class="container">
+  <div class="row">
+      <!--The first column -->
+    <div class="col-sm-9">
+      <div class="row">
+          <div class="col-sm-4">
+            <a [routerLink]="['/dashboard']">
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-body">
+                  <p class="card-text">Hours Worked</p>
+                  <h4>30.00 Hours</h4>
+                  <div class="row">
+                    <div class="col">
+                      <p>Last Week<br>40.00</p>
+                    </div>
+                    <div class="col">
+                      <p>October<br>160.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a [routerLink]="['/dashboard']">
+              <div class="card bg-secondary mb-3">
+                <div class="card-body">
+                  <p class="card-text">Vacation Hours Available</p>
+                  <h4 (click)="openModal(template)">24 Hours</h4>
+                  <ng-template #template>
+                    <div class="modal-header">
+                      <h4 class="modal-title pull-left">Modal</h4>
+                      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label for="entry">Entry Type</label>
+                                  <select id="inputState" class="form-control">
+                                    <option>Factory Floor - Ojota</option>
+                                    <option>Delivery - Ikeja Factory</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label>Factory Floor - Ojota</label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Delivery - Ikeja Factory</label>
+                                </div>
+                              </div>
+
+                              <div class="col">
+                                  <div class="form-group">
+                                    <label>Hours</label>
+                                    <input type="text" placeholder="7.50" class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>7.50 Hours</label>
+                                  </div>
+                                  <div class="form-group">
+                                      <label>5.00 Hours</label>
+                                  </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                      <button type="button" class="btn btn-success">Add Time</button>
+                                    </div>
+                                    <div class="form-group">
+                                      <button type="button" class="btn btn-danger">Remove</button>
+                                    </div>
+                                    <div class="form-group">
+                                      <button type="button" class="btn btn-danger">Remove</button>
+                                    </div>
+                                  </div>
+                            </div>
+                          </form>
+                      </div>
+                      <!--modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" id="long">Copy to Next day</button>
+                      <button type="button" class="btn btn-secondary" id="long">Copy to End of Week</button>
+                      <button type="button" class="btn btn-secondary" (click)="lgModal.hide()" id="long">Cancel</button>
+                      <button type="button" class="btn btn-primary" id="long">OK</button>
+                  </div>
+                  </ng-template>
+                  <div class="row">
+                    <div class="col">
+                      <p>Used<br>16.00</p>
+                    </div>
+                    <div class="col">
+                      <p>Pending<br>8.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a [routerLink]="['/']">
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-body">
+                  <p class="card-text">Available Sick Leave</p>
+                  <h4>24 Hours</h4>
+                  <div class="row">
+                    <div class="col">
+                      <p>Used<br>16.00</p>
+                    </div>
+                    <div class="col">
+                      <p>Pending<br>8.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div><!--row ends here -->
+
+        <div class="row">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="row">Timesheets</th>
+                </tr>
+              </thead>
+                <thead>
+                  <tr>
+                    <th scope="col">Period Ending Date</th>
+                    <th scope="col">Hour Status</th>
+                    <th scope="col">Worksite</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a [routerLink]="['/weektimeentry']">11/04/2017</a></td>
+                    <td>40 Submitted</td>
+                    <td>United Bank of Africa</td>
+                  </tr>
+                  <tr>
+                    <td><a [routerLink]="['/weektimeentry']">10/28/2017</a></td>
+                    <td>34 Rejected</td>
+                    <td>Zenith Bank</td>
+                  </tr>
+                  <tr>
+                      <td><a [routerLink]="['/weektimeentry']">10/21/2017</a></td>
+                      <td>37 Approved</td>
+                      <td>Ilupeju Plastic Factory</td>
+                  </tr>
+                  <tr>
+                      <td><a [routerLink]="['/weektimeentry']">10/14/2017</a></td>
+                      <td>40 Approved</td>
+                      <td>Alaba Technology Temps</td>
+                  </tr>
+                  <tr>
+                      <td><a [routerLink]="['/weektimeentry']">10/07/2017</a></td>
+                      <td>28 Approved</td>
+                      <td>Kunata Logic</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div><!--row ends here -->
+
+        <div class="row">
+            <div class="col-xs-12 col-12 col-md-6">
+                  <pagination
+                    [directionLinks]="false"
+                    [totalItems]="totalItems"
+                    [(ngModel)]="currentPage"
+                    (numPages)="smallnumPages = $event">
+                  </pagination>
+            </div>
+               
+            <div class="col-xs-12 col-12 col-md-6">
+                  <pager
+                    [totalItems]="totalItems"
+                    [(ngModel)]="currentPage"
+                    (pageChanged)="pageChanged($event)"
+                    pageBtnClass="btn"
+                    [itemsPerPage]="10"
+                    class="pull-left">
+                  </pager>
+            </div>
+        </div><!--row ends here -->
+  </div><!--The first column ends here -->
+
+  <!--The second column -->
+  <div class="col-sm-3">
+        <div class="row">
+          <div class="col-sm-5">
+              <a href="#" class="mr-3">My Profile</a>              
+          </div>
+        </div><!-- first row ends -->
+        <div class="row">
+            <p class="mr-3" id="messages">Messages</p>
+        </div>
+    </div>
+  </div>
+</div>

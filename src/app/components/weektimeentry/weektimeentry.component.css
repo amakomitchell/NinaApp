@@ -1,0 +1,16 @@
+#long{
+    width: 120px;
+    height: 45px;
+    text-transform:none;
+}
+.btn{
+    padding: 0;
+    margin: 0;
+    height: 28px;
+    width: 56px;
+    text-transform: lowercase;
+    line-height: 38px;
+    overflow: visible;
+    white-space: nowrap;
+
+}

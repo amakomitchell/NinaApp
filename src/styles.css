@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files 
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}*/
+
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+.btn-cen {
+    position: absolute;
+    left: 30%;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+.bgimg-1 {
+    background-image: url("http://www.soluciones506.com/img/parallax/arbol.jpg");
+    min-height: 100%;
+}
+  
+.bgimg-2 {
+    background-image: url("http://www.soluciones506.com/img/parallax/consultorias.jpg");
+    min-height: 400px;
+}
+  
+.bgimg-3 {
+    background-image: url("https://www.raben-group.com/fileadmin/user_upload/global/MediaCenter/ZDJECIA/PEOPLE/People_in_the_office_2_15x10.jpg");
+    min-height: 400px;
+}
+  
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+  
+  
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+  
+h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+}
+  
+  /* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+          background-attachment: scroll;
+    }
+}
+  

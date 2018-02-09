@@ -1,0 +1,12 @@
+<div class="container">
+    <app-entryedit
+      ( TimeEntryAdded)= onTimeEntryAdded($event)></app-entryedit>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>{{time-entry.type}}</td>
+          <td>{{time-entry.hour}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

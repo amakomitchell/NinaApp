@@ -1,7 +1,7 @@
 {
   "name": "meanstackapp",
-  "version": "0.0.0",
-  "license": "MIT",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,7 +21,23 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "angular-bootstrap-md": "^5.0.5",
+    "angular2-flash-messages": "^1.0.8",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap-toggle": "^2.2.2",
+    "chart.js": "^2.5.0",
     "core-js": "^2.4.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.1",
+    "ngx-bootstrap": "^2.0.0-beta.8",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
@@ -45,5 +61,8 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
-  }
+  },
+  "description": "MEAN stack authentication application.",
+  "main": "app.js",
+  "author": "Amako Ugochi"
 }

@@ -1,0 +1,162 @@
+<div class="container">
+    <br><br>
+    <div class="row">
+      <div class="col-sm-8"></div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Daterangepicker" bsDaterangepicker [(ngModel)]="daterangepickerModel" />
+        </div>
+      </div>
+    </div> <!--first rown ends here -->
+<!-- 
+    <div class="container">
+        <div class="row">
+            <div class="col">
+              <strong>Worksite / Assignment</strong>
+              <strong>Mon</strong>
+              <strong>Tue</strong>
+              <strong>Wed</strong>
+              <strong>Thur</strong>
+              <strong>Fri</strong>
+              <strong>Sat</strong>
+              <strong>Sun</strong>
+              <strong>Total</strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+                <input type="text" class="form-control input-sm" id="type" #typeInput>
+                <input type="number" class="form-control" id="mon" #monInput>
+                <input type="number" class="form-control" id="tue" #tueInput>
+                <input type="number" class="form-control" id="wed" #wedInput>
+                <input type="number" class="form-control" id="thur" #thurInput>
+                <input type="number" class="form-control" id="fri" #friInput>
+                <input type="number" class="form-control" id="sat" #satInput>
+                <input type="number" class="form-control" id="sun" #sunInput>
+                <input type="number" class="form-control" id="total" #totalInput>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <ul class="list-group">
+                <a class="list-group-item"
+                  style="cursor: pointer"
+                  *ngFor="let time-entry of time-entries">
+                  {{time-entry.type}} {{time-entry.mon}} {{time-entry.tue}} {{time-entry.wed}} {{time-entrythur}}
+                  {{time-entry.fri}} {{time-entry.sat}} {{time-entry.sun}} {{time-entry.total}}
+                </a>
+              </ul>
+            </div>
+          </div>
+    </div> -->
+
+      <table class="table table-striped">
+       <thead>
+         <tr>
+           <th scope="col">Worksite / Assignment</th>
+           <th scope="col">Mon</th>
+           <th scope="col">Tue</th>
+           <th scope="col">Wed</th>
+           <th scope="col">Thu</th>
+           <th scope="col">Fri</th>
+           <th scope="col">Sat</th>
+           <th scope="col">Sun</th>
+           <th scope="col">Total</th>
+           <th scope="col"></th>
+           <th scope="col"></th>
+           <th scope="col"></th>
+           <th scope="col">
+             <div class="dropdown">
+               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Action
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <a class="dropdown-item" href="#">--first</a>
+                 <a class="dropdown-item" href="#">--first</a>
+               </div>
+             </div>
+           </th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Ilupeju Plastic Works<br>Delivery Truck Driver<br>ILU-199DR-170801</td>
+           <td><a (click)="openModal(template)">8.00</a></td>
+           <td><a (click)="openModal(template)">8.00</a></td>
+           <td><a (click)="openModal(template)">8.00</a></td>
+           <td><a (click)="openModal(template)">8.00</a></td>
+           <td><a (click)="openModal(template)">8.00</a></td>
+           <td><a (click)="openModal(template)">6.00</a></td>
+           <td><a (click)="openModal(template)">0.00</a></td>
+           <td>46.00</td>
+           <td><img src="assets/svg/si-glyph-bubble-message-dot-2.svg" style="font-size:36px;"></td>
+           <td><img src="assets/svg/si-glyph-paper-clip.svg" style="font-size:36px;"></td>
+           <td>
+             <button type="button" class="btn btn-primary">
+             Worked
+            </button>
+            <ng-template #template>
+                <div class="modal-header">
+                  <h4 class="modal-title pull-left">Modal</h4>
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                            <label for="entry">Entry Type</label>
+                            <input
+                              type="text"
+                              id="type"
+                              class="form-control"
+                              #typeInput>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group">
+                            <label for="hours">Hours</label>
+                            <input 
+                            type="number" 
+                            placeholder="7.50" 
+                            class="form-control"
+                            #hoursInput>
+                          </div>
+                        </div>
+                        
+                        <div class="col">
+                          <div class="form-group">
+                            <button type="button" class="btn btn-success" (click)="onAddTime()">Add Time</button>
+                          </div>
+                          <div class="form-group">
+                            <button type="button" class="btn btn-danger">Remove</button>
+                          </div>
+                          <div class="form-group">
+                            <button type="button" class="btn btn-danger">Remove</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div> <!-- Ends modal-body -->
+                  
+                  <!--modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" id="long">Copy to Next day</button>
+                      <button type="button" class="btn btn-secondary" id="long">Copy to End of Week</button>
+                      <button type="button" class="btn btn-secondary" (click)="modalRef.hide()" id="long">Cancel</button>
+                      <button type="button" class="btn btn-primary" id="long" (click)="onAddTime()">OK</button>
+                  </div>
+                  </ng-template>
+          </td>
+           <td><button type="button" class="btn btn-success">Saved</button></td>
+         </tr>
+       </tbody>
+     </table>
+  
+  </div>
+  
+
