@@ -1,70 +1,97 @@
-<div class="container">
-    <h1>Employee Registration</h1>
+<div class="container" id="signup">
+    <div class="p-3 mb-2 bg-info text-center">
+      <img src="assets/svg/si-glyph-person-plus.svg" style="font-size:4px; width:5%;">
+      Employee Registration
+    </div>
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-  
-  
-      <div class="form-group">
-        <label for="fname">First Name</label>
-        <input type="text" class="form-control" id="fname" required
-          [(ngModel)]="model.fname" name="fname" #fname="ngModel">
-  
-        <div [hidden]="fname.valid || fname.pristine"
-          class="alert alert-danger">
-          First Name is required
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" class="form-control" id="fname" required
+            [(ngModel)]="model.fname" name="fname" #fname="ngModel">
+
+          <div [hidden]="fname.valid || fname.pristine"
+            class="alert alert-danger">
+            First Name is required
+          </div>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="lname">Last Name</label>
-        <input type="text" class="form-control" id="lname" required
-          [(ngModel)]="model.lname" name="lname" #lname="ngModel">
-  
-        <div [hidden]="lname.valid || lname.pristine"
-          class="alert alert-danger">
-          Last Name is required
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" class="form-control" id="lname" required
+            [(ngModel)]="model.lname" name="lname" #lname="ngModel">
+
+          <div [hidden]="lname.valid || lname.pristine"
+            class="alert alert-danger">
+            Last Name is required
+          </div>
         </div>
       </div>
-  
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="text" class="form-control" id="phone" required
-          [(ngModel)]="model.phone" name="phone">
+    </div>
 
-      </div>
-  
-      <div class="form-group">
-        <label for="gender">Gender</label>
-        <select class="form-control" id="gender" required
-          [(ngModel)]="model.gender" name="gender">
-          <option *ngFor="let gen of genders" [value]="gen">{{gen}}</option>
-        </select>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="text" class="form-control" id="phone" required
+        [(ngModel)]="model.phone" name="phone">
+
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select class="form-control" id="gender" required
+        [(ngModel)]="model.gender" name="gender">
+        <option *ngFor="let gen of genders" [value]="gen">{{ gen }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Contact Address</label>
+      <input type="text" class="form-control" id="address" required
+        [(ngModel)]="model.address" name="address">
+    </div>
+
+    <div class="form-group">
+      <label for="qual">Qualification</label>
+      <select class="form-control" id="qual" required
+        [(ngModel)]="model.qual" name="qual">
+        <option *ngFor="let qual of quals" [value]="qual">{{qual}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" required
+        [(ngModel)]="model.email" name="email" #name="ngModel">
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" required
+            [(ngModel)]="model.password" name="password" #name="ngModel">
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="address">Contact Address</label>
-        <input type="text" class="form-control" id="address" required
-          [(ngModel)]="model.address" name="address">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="confpass">Confirm Password</label>
+          <input type="password" class="form-control" id="confpass" required
+            [(ngModel)]="model.confpass" name="confpass" #name="ngModel">
+        </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" id="email" required
-          [(ngModel)]="model.email" name="email" #name="ngModel">
-      </div>
-  
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" required
-          [(ngModel)]="model.password" name="password" #name="ngModel">
-      </div>
-  
-  
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit
-          
-      </button>
-  
-      <button type="button" class="btn btn-default" (click)="newHero()">New Employee</button>
-    </form>
+    <button type="submit" class="btn btn-info" [disabled]="!heroForm.form.valid">
+      <img src="assets/svg/si-glyph-paper-plane.svg" style="font-size:4px; width:6%;">
+      Submit</button>
+    <button type="button" class="btn btn-default" (click)="newHero()">
+      <img src="assets/svg/si-glyph-person-plus.svg" style="font-size:4px; width:5%;">
+      New Employee</button>
+  </form>
 </div>
 
 <!-- hidden div, appears when the form is submitted -->
@@ -79,7 +106,7 @@
         <div class="col-sm-3">Last Name</div>
         <div class="col-sm-9 pull-left">{{ model.lname }}</div>
       </div>
-  
+
     <div class="row">
       <div class="col-sm-3">Phone Number</div>
       <div class="col-sm-9 pull-left">{{ model.phone }}</div>
@@ -89,7 +116,7 @@
         <div class="col-sm-3">Gender</div>
         <div class="col-sm-9 pull-left">{{ model.gender }}</div>
       </div>
-  
+
     <div class="row">
       <div class="col-sm-3">Contact Address</div>
       <div class="col-sm-9 pull-left">{{ model.address }}</div>

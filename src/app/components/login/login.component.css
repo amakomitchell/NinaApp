@@ -1,7 +1,7 @@
-h4 {
+h5 {
 
     text-align: center;
-    color: white;
+    color: rgb(50, 181, 241);
     margin-top: 0%;
     width: 100%;
 }
@@ -10,16 +10,13 @@ h4 {
     width: 30%;
     height: 70%;
     border-width: thin;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     padding: 5px;
     background-image: url('https://i.pinimg.com/736x/aa/2b/98/aa2b986c52fbaec1999c215d9c9984b3--churchill-canada-churchill-manitoba.jpg');
-    color: white;
+    color: rgb(11, 6, 14);
     max-height: 100%;
     font-size: 14px;
     box-shadow: 6px 5px 7px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-#theform input{
-    color: white;
 }
 
 a:link {

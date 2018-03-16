@@ -7,7 +7,7 @@ export class ValidateService {
 
   validateRegister(employee){
     if(employee.fname == undefined || employee.lname == undefined || employee.gender == undefined || employee.phone == undefined
-    || employee.contact == undefined || employee.username == undefined || employee.email == undefined || employee.password == undefined){
+    || employee.contact == undefined || employee.qual == undefined || employee.email == undefined || employee.password == undefined){
       return false;
     } else{
       return true;

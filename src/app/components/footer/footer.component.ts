@@ -13,4 +13,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  // const thisYear  = new Date().getFullYear();
+  // startYear = '2014';
+
+  // if (thisYear > this.startYear) { ('#copyright').text(this.startYear + '-' + thisYear); } 
 }

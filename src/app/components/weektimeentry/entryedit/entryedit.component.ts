@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
-import { TimeEntry } from '../../../time-entry';
+import { TimeEntry } from '../../../shared/models/time-entry';
+
 
 @Component({
   selector: 'app-entryedit',
@@ -9,22 +10,22 @@ import { TimeEntry } from '../../../time-entry';
   encapsulation: ViewEncapsulation.None
 })
 export class EntryeditComponent implements OnInit {
-
-  timeEntries: TimeEntry[] = [
-    new TimeEntry('Kunata Logic Soft Room', 8.90),
-    new TimeEntry('OutsideInHR', 30.05)
-
-  ]
+  // @ViewChild('typeInput') typeInputRef: ElementRef;
+  @ViewChild('hoursInput') hoursInputRef: ElementRef;
+  @Output() timeentryAdded = new EventEmitter<TimeEntry>();
 
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
 
- 
-  onTimeEntryAdded(timeentry: TimeEntry) {
-    this.timeEntries.push(timeentry);
+  onAddTime() {
+    // const tmeType = this.typeInputRef.nativeElement.value;
+    const tmeHours = this.hoursInputRef.nativeElement.value;
+    const newTimeEntry = new TimeEntry(tmeHours);
+    this.timeentryAdded.emit(newTimeEntry);
   }
+
 
 }

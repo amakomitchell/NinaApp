@@ -19,8 +19,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-import {ValidateService} from './services/validate.service';
-import { AuthService } from './services/auth.service';
+import {ValidateService} from './shared/services/validate.service';
+import { AuthService } from './shared/services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FooterComponent } from './components/footer/footer.component';
 import { WeektimeentryComponent } from './components/weektimeentry/weektimeentry.component';
@@ -28,18 +28,14 @@ import { BreaktimeComponent } from './components/breaktime/breaktime.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EntryeditComponent } from './components/weektimeentry/entryedit/entryedit.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardService } from './shared/services/dashboard.service';
+import { DashboardWeeklyComponent } from './components/dashboard/dashboard-weekly/dashboard-weekly.component';
+import { DashboardMonthlyComponent } from './components/dashboard/dashboard-monthly/dashboard-monthly.component';
+import { WorksiteService } from './shared/services/worksite.service';
+import { TimeEntryService } from './shared/services/time-entry.service';
 //import {Success} from 'angular2-success-messages';
 
-const appRoutes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'login', component: LoginComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'profile', component: ProfileComponent},
-  {path:'weektimeentry', component:WeektimeentryComponent},
-  {path:'contact', component:ContactComponent}
-  
-]
 
 @NgModule({
   declarations: [
@@ -55,6 +51,8 @@ const appRoutes: Routes = [
     BreaktimeComponent,
     ContactComponent,
     EntryeditComponent,
+    DashboardWeeklyComponent,
+    DashboardMonthlyComponent,
     
   ],
   imports: [
@@ -68,10 +66,16 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     FlashMessagesModule
   ],
-  providers: [ValidateService, AuthService],
+  providers: [
+    ValidateService, 
+    AuthService,
+    DashboardService,
+    WorksiteService,
+    TimeEntryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,8 +6,10 @@ export class Hero {
         public phone: string,
         public gender: string,
         public address: string,
+        public qual: string,
         public email: string,
-        public password: string
+        public password: string,
+        public confpass: string
     ) { }
 
 }

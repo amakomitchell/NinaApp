@@ -1,12 +1,14 @@
 <br><br>
 <div class="container" id="theform">
-  <h4>Login to Nina Workforce Time Manager</h4>
+    <h5>
+      <img src="assets/svg/si-glyph-key-2.svg" style="font-size:4px; width:5%;">
+      Login to Nina Workforce Time Manager</h5>
   <br><br>
-  <form class="container" (submit)="onLoginSubmit($event)">
+  <form (submit)="onLoginSubmit($event)">
     
     <div class="row">
       <div class="col">
-        <label for="validationCustom01">Username</label>
+        <label for="validationCustom01">Email address</label>
         <input type="text" class="form-control">
       </div>
     </div>
@@ -29,7 +31,9 @@
     </div>
     <br><br>
 
-    <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">
+      <img src="assets/svg/si-glyph-paper-plane.svg" style="font-size:4px; width:5%;">
+      Login</button>
     <br>
     <div class="row">
       <div class="col">
